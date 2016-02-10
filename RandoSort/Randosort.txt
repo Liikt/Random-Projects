@@ -1,0 +1,6 @@
+This sortingalgorithm came into my mind while talking with some friends at university about dumb 
+sortingalgorithms (i.e. bogosort or stacksort). It basically checks with a chance of 50% if the 
+array is sorted. If not there is another 50% chance that two random entries in the list will be 
+swaped. To be honest I don't know what the actual avarage runtime is, but it's way to much. The 
+compare function compares the needed instructions (far better method of comparing than actual 
+runtime) with the needed instructions of bubblesort. 
