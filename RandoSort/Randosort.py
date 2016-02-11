@@ -312,8 +312,9 @@ def main():
         print(' *                    Q: Quit                     *')
         print(' **************************************************')
         print('\n Please enter your input!')
-        inp = input(' -> ') 
-        if handleInput(inp, array, sent) == 1:
+        inp = input(' -> ')
+        temp = handleInput(inp, array, sent)
+        if temp == 1:
             break
 
     print('Shutting Down ......................')
