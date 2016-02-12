@@ -1,0 +1,3 @@
+This is going to be my collection of the solved puzzles/bots/etc. from the website www.codingame.com
+
+Julian Beier
