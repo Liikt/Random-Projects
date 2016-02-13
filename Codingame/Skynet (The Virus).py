@@ -1,5 +1,6 @@
 import sys
 import math
+import random
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -42,17 +43,17 @@ def calcAction():
     global n
     mini = n + 1
     g = -1
-    n = -1
+    current = -1
 
     for gateway in gateways:
         for node in adj[gateway]:
             if erg[node] < mini:
                 mini = erg[node]
                 g = gateway
-                n = node
+                current = node
 
-    delZelda(g, n)
-    print(str(g) + ' ' + str(n))
+    delZelda(g, current)
+    print(str(g) + ' ' + str(current))
 
 n, l, e = [int(i) for i in input().split()]
 
@@ -78,4 +79,3 @@ while True:
 
     # Example: 0 1 are the indices of the nodes you wish to sever the link between
 #   print("0 1")
-#
