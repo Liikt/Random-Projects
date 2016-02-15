@@ -59,6 +59,7 @@ for i in range(l):
         teleport[1][0] = row.find('T')
         teleport[1][1] = i
 
+
 while bender[0] != kill:
     #print('kill: ' + str(kill),file=sys.stderr)
     #print('bender[0]: ' + str(bender[0]),file=sys.stderr)
@@ -82,7 +83,13 @@ while bender[0] != kill:
             town[bender[0][1]] = town[bender[0][1]][:bender[0][0]] + ' ' + town[bender[0][1]][bender[0][0]+1:]
             
             if bender in stack and stack.count(bender) > 2 and stackT[stack.index(bender)] == town:
-                stackT.remove(town)
+                print(bender, file=sys.stderr)
+                print(stack[stack.index(bender)+1], file=sys.stderr)
+                print(stack[stack.index(bender)+2], file=sys.stderr)
+                print(stack[stack.index(bender)+3], file=sys.stderr)
+                print(stack[stack.index(bender)+4], file=sys.stderr)
+                print('teleport: ' + str(teleport), file=sys.stderr)
+                stackT.pop(stack.index(bender))
                 stack.remove(bender)
                 if bender in stack and stackT[stack.index(bender)] == town:
                     loop = True
@@ -98,7 +105,13 @@ while bender[0] != kill:
             path.append(bender[1])
             
             if bender in stack and stack.count(bender) > 2 and stackT[stack.index(bender)] == town:
-                stackT.remove(town)
+                print(bender, file=sys.stderr)
+                print(stack[stack.index(bender)+1], file=sys.stderr)
+                print(stack[stack.index(bender)+2], file=sys.stderr)
+                print(stack[stack.index(bender)+3], file=sys.stderr)
+                print(stack[stack.index(bender)+4], file=sys.stderr)
+                print('teleport: ' + str(teleport), file=sys.stderr)
+                stackT.pop(stack.index(bender))
                 stack.remove(bender)
                 if bender in stack and stackT[stack.index(bender)] == town:
                     loop = True
