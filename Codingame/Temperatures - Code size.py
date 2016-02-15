@@ -1,0 +1,1 @@
+input();t=[int(i)for i in input().split()];t.sort();t.reverse();print(min(t or [0],key=abs))
