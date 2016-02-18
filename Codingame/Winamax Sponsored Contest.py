@@ -9,6 +9,7 @@ player1 = ''
 player2 = ''
 war = ''
 sent = 0
+dic = {'1':'10', 'J':'11', 'Q':'12', 'K':'13', 'A':'14'}
 
 def aRound():
     global rounds
@@ -21,12 +22,7 @@ def aRound():
     print('Player 1: ' + player1, file=sys.stderr)
     print('Player 2: ' + player2, file=sys.stderr)
     
-    
-    if len(player1) == 0 and len(player2) == 0:
-        print('PAT')
-        sent = 1
-        return
-    elif len(player1) == 0:
+    if len(player1) == 0:
         print('2 ' + str(rounds))
         sent = 1
         return
@@ -41,61 +37,32 @@ def aRound():
     p1 = wert1
     p2 = wert2
     
-    war = war + p1 + p2
+    war = p1 + p2
 
     player1 = player1[1:]
     player2 = player2[1:]
 
-    if wert1 == '1':
-        wert1 += '0'
-    elif wert1 == 'J':
-        wert1 = '11'
-    elif wert1 == 'Q':
-        wert1 = '12'
-    elif wert1 == 'K':
-        wert1 = '13'
-    elif wert1 == 'A':
-        wert1 = '14'
-    if wert2 == '1':
-        wert2 += '0'
-    elif wert2 == 'J':
-        wert2 = '11'
-    elif wert2 == 'Q':
-        wert2 = '12'
-    elif wert2 == 'K':
-        wert2 = '13'
-    elif wert2 == 'A':
-        wert2 = '14'
+    if wert1 == '1' or wert1 == 'J' or wert1 == 'Q' or wert1 == 'K' or wert1 == 'A':
+        wert1 = dic[wert1]
+    if wert2 == '1' or wert2 == 'J' or wert2 == 'Q' or wert2 == 'K' or wert2 == 'A':
+        wert2 = dic[wert2]
 
     if int(wert1) > int(wert2):
         player1 = player1 + war
-        war = war[:2]
+        war = war[:len(war)-2]
     elif int(wert2) > int(wert1):
         player2 = player2 + war
-        war = war[:2]
+        war = war[:len(war)-2]
     elif int(wert1) == int(wert2):
-        if len(player1) < 3 and len(player2) > 3:
-            print('PAT ' + str(rounds))
-            sent = 1
-            return
-        elif len(player2) < 3 and len(player1) > 3:
-            print('PAT ' + str(rounds))
-            sent = 1
-            return
-        elif len(player1) < 3 and len(player2) < 3:
-            print('PAT ' + str(rounds))
-            sent = 1
-            return
-        else:
-            war = war + p1 + player1[0] + player1[1] + player1[2]
-            war = war + p2 + player2[0] + player2[1] + player2[2]
+        war = war[:len(war)-2]
+        war = war + p1 + player1[0] + player1[1] + player1[2] + p2 + player2[0] + player2[1] + player2[2]
         player1 = player1[3:]
         player2 = player2[3:]
         print('Player 1: ' + player1, file=sys.stderr)
         print('Player 2: ' + player2, file=sys.stderr)
         print('War: ' + war, file=sys.stderr)
         
-        if len(player1) < 3 or len(player2) < 3:
+        if len(player1) == 0 or len(player2) == 0:
             print('PAT')
             sent = 1
             return
@@ -108,10 +75,10 @@ def aRound():
 
 n = int(input())  # the number of cards for player 1
 for i in range(n):
-    player1 = input()[0] + player1 # the n cards of player 1
+    player1 = player1 + input()[0] # the n cards of player 1
 m = int(input())  # the number of cards for player 2
 for i in range(m):
-    player2 = input()[0] + player2  # the m cards of player 2
+    player2 = player2 + input()[0]  # the m cards of player 2
 
 
 
