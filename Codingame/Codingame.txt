@@ -1,3 +1,7 @@
 This is going to be my collection of the solved puzzles/bots/etc. from the website www.codingame.com
+I mostly do those with a friend of mine.
+
+My name is Liikt
+My friends name is Sagolel
 
 Julian Beier
