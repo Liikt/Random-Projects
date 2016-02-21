@@ -1,4 +1,4 @@
-# DISCLAIMER:
+# DISCLAIMER (for that uncommend the lines in calcAbstand):
 # The Testcase Complex Mesh only works ine the Submit NOT in the actual test
 # It probably has to do with inconsistencies between the test and submit cases 
 # The thing causing the discrapencies is probably in line 95 the '<'
@@ -37,19 +37,19 @@ def calcAbstand(start):
     erg[start] = 0
  
     for node in visited:
-        foundGateway=False
+        #foundGateway=False
         for x in adj[node]:
             if x not in visited:
                 visited.append(x)
                 erg[x] = abstand
-                if testGateways(x)>0:
-                    foundGateway=True
+                #if testGateways(x)>0:
+                #    foundGateway=True
  
         if node == temp:
-            if foundGateway==True:
-                for i in range(len(visited)-1,visited.index(temp),-1):
-                    if testGateways(visited[i])==0:
-                        visited.pop(i)
+            #if foundGateway==True:
+            for i in range(len(visited)-1,visited.index(temp),-1):
+                if testGateways(visited[i])==0:
+                    visited.pop(i)
 
             abstand += 1
             temp = visited[len(visited)-1]
@@ -92,7 +92,7 @@ while True:
         mini=n+2
         critest = -1
         for crit in critical:
-            if erg[crit]<mini:
+            if erg[crit]<=mini:
                 mini=erg[crit]
                 critest=crit
 
