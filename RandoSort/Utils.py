@@ -96,6 +96,7 @@ def fillRandom(arr):
             print('\n The lower boundary can\'t be a greater number than the upper boundary!')
             temp = input(' Press return to continue')
             clear()
+            sent = 0
         elif sent == 3:
             break
 
@@ -147,11 +148,10 @@ def compare(arr, s):
     bub = arr
     ran = arr
 
-    instructions = Sorts.Bubble(bub, s)
+    arr, instructions = Sorts.Bubble(bub, s)
     print('\n For a list with ' + str(len(arr)) + ' entries, Bubblesort takes ' + str(instructions) + ' instructions.')
-    temp = instructions
-    instructions = Sorts.RandomSort(ran, s)
-    print(' For a list with ' + str(len(arr)) + ' entries, Randomsort takes ' + str(instructions) + ' instructions.')
+    arr, instructions = Sorts.RandomSort(ran, s)
+    print(' For a list with ' + str(len(arr)) + ' entries, Randomsort needed ' + str(instructions) + ' instructions this time.')
     temp = input(' Press return to continue')
     clear()
 

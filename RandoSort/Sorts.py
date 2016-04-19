@@ -13,7 +13,6 @@ def RandomSort(arr, s):
             check, instructions = Utils.checkIfSorted(arr, s, instructions)
             if check == True:
                 instructions += 1
-                Utils.clear()
                 return arr, instructions
         instructions += 1
         rand = random.randint(0,1)
@@ -46,7 +45,6 @@ def Bubble(arr, s):
                     arr, instructions = Utils.swap(arr, i, i+1, instructions)
         instructions += 1
     instructions += 1
-    Utils.clear()
     return arr, instructions
 
 if __name__ == '__main__':
