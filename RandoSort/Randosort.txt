@@ -4,3 +4,7 @@ array is sorted. If not there is another 50% chance that two random entries in t
 swaped. To be honest I don't know what the actual avarage runtime is, but it's way to much. The 
 compare function compares the needed instructions (far better method of comparing than actual 
 runtime) with the needed instructions of bubblesort. 
+
+Edit (19.04.2016):
+An already sorted array takes at least 14 instructions to compare. Otherwise I think the O 
+notation is pretty much useless.
