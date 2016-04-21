@@ -69,7 +69,7 @@ def main():
         print(' **************************************************')
         print('\n Please enter your input!')
         inp = input(' -> ')
-        print(inp)
+
         inpu, array, sent = handleInput(inp, array, sent)
         if inpu == 1:
             break
