@@ -19,3 +19,6 @@ def filemerge(file1, file2, file3):
     for x in list3:
         f.write(x+"\n")
     f.close()
+
+if __name__ == '__main__':
+    print("This is a modul")
